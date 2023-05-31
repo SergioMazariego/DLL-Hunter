@@ -1,6 +1,6 @@
 # Windows DLL Process Hunt
 
-Windows DLL Process Hunt is a Python script that scans running processes on a Windows host and identifies instances of specific processes executing DLLs. It helps in the detection and analysis of potentially malicious or suspicious activities by monitoring processes commonly associated with DLL injection or other security-related concerns.
+Windows DLL Process Hunt is a Python script that scans running processes on a Windows host and identifies instances of specific processes executing DLLs, it helps in the detection and analysis of potentially malicious or suspicious activities by monitoring processes commonly associated with DLL injection or other security-related concerns.
 
 ## Features
 
@@ -40,7 +40,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Disclaimer
 
-The Windows DLL Process Hunt script is provided for educational and informational purposes only, the  and contributors are not responsible for any misuse or damage caused by this script, use it at your own risk.
+The Windows DLL Process Hunt script is provided for educational and informational purposes only, the  autor and contributors are not responsible for any misuse or damage caused by this script, use it at your own risk.
 
 ## References
 
