@@ -1,6 +1,6 @@
-# Windows DLL Process Hunt
+# DLL Hunter
 
-Windows DLL Process Hunt is a Python script that scans running processes on a Windows host and identifies instances of specific processes executing DLLs, it helps in the detection and analysis of potentially malicious or suspicious activities by monitoring processes commonly associated with DLL injection or other security-related concerns.
+DLL Hunter is a Python script that scans running processes on a Windows host and identifies instances of specific processes executing DLLs. It helps in the detection and analysis of potentially malicious or suspicious activities by monitoring processes commonly associated with DLL injection or other security-related concerns.
 
 ## Features
 
@@ -18,7 +18,7 @@ Windows DLL Process Hunt is a Python script that scans running processes on a Wi
 
 1. Clone or download this repository.
 
-2. Install the required `psutil` library by running the following command: pip install psutil
+2. Install the required `psutil` library by running the following command: `pip install psutil`
 
 ## Usage
 
@@ -26,7 +26,7 @@ Windows DLL Process Hunt is a Python script that scans running processes on a Wi
 
 2. Navigate to the project directory.
 
-3. Run the script using the following command: python dll_process_hunt.py
+3. Run the script using the following command: `python dll_hunter.py`
 
 4. The script will scan the running processes and display the processes with DLLs, including their names, PIDs, and DLL paths.
 
@@ -40,12 +40,8 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Disclaimer
 
-The Windows DLL Process Hunt script is provided for educational and informational purposes only, the  autor and contributors are not responsible for any misuse or damage caused by this script, use it at your own risk.
+The DLL Hunter script is provided for educational and informational purposes only. The author and contributors are not responsible for any misuse or damage caused by this script. Use it at your own risk.
 
 ## References
 
-[Hunting Lazarus Group’s TTPs](https://montysecurity.medium.com/hunting-lazarus-groups-ttps-925c17469077)
-
-
-
-
+- [Hunting Lazarus Group’s TTPs](https://montysecurity.medium.com/hunting-lazarus-groups-ttps-925c17469077)

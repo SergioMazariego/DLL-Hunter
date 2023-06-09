@@ -1,17 +1,19 @@
 import psutil
+import sys
 
 def get_processes_with_dlls(process_names):
     processes_with_dlls = []
-    
-    for proc in psutil.process_iter(['name', 'pid']):
+
+    for proc in psutil.process_iter(['name', 'pid', 'cmdline']):
         try:
             if proc.name() in process_names:
-                for dll in proc.memory_maps(grouped=False):
-                    if dll.path.endswith('.dll'):
-                        processes_with_dlls.append((proc.name(), proc.pid, dll.path))
+                cmdline = proc.cmdline()
+                if len(cmdline) > 1:
+                    args = ' '.join(cmdline[1:])
+                    processes_with_dlls.append((proc.name(), proc.pid, args))
         except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
             pass
-    
+
     return processes_with_dlls
 
 def main():
@@ -23,13 +25,13 @@ def main():
         'dotnet.exe', 'procdump.exe', 'tracker.exe', 'vsls-agent.exe',
         'wuauclt.exe'
     ]
-    
+
     processes_with_dlls = get_processes_with_dlls(process_names)
-    
+
     if len(processes_with_dlls) > 0:
         print("Processes with DLLs:")
         for process in processes_with_dlls:
-            print(f"Name: {process[0]}\tPID: {process[1]}\tDLL Path: {process[2]}")
+            print(f"Name: {process[0]}\tPID: {process[1]}\tCommand Line Arguments: {process[2]}")
     else:
         print("No processes with DLLs found.")
 
